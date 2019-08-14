@@ -10,26 +10,26 @@ from demo_factory_boy.fbobject.user import User
 from demo_factory_boy.fbobject.school import School
 from demo_factory_boy.fbprivader.numpv import NumProvider
 
-factory.Faker.add_provider(NumProvider)
+factory.Faker.add_provider(NumProvider)  #添加自定义的NumProvider
 
 
 class SchoolFactory(factory.Factory):
     class Meta:
         model = School
 
-    schoolName = factory.sequence(lambda n: 'school%04d' % n)
+    schoolName = factory.sequence(lambda n: 'school%04d' % n)#factory.sequence
 
 
 class UserFactory(factory.Factory):
     class Meta:
         model = User
 
-    name = factory.Faker("name", locale="zh_CN")
+    name = factory.Faker("name", locale="zh_CN")#factory.Faker
     num = factory.Faker("num")
-    age = factory.fuzzy.FuzzyInteger(42)
+    age = factory.fuzzy.FuzzyInteger(42)#factory.fuzzy.FuzzyInteger
     city = factory.Faker("address", locale="zh_CN")
-    phone = factory.fuzzy.FuzzyText("138", 7, "1", "1234567890")
-    school = factory.SubFactory(SchoolFactory)
+    phone = factory.fuzzy.FuzzyText("138", 7, "1", "1234567890")#factory.fuzzy.FuzzyText
+    school = factory.SubFactory(SchoolFactory)#factory.SubFactory
 
     class Params:
         shipped = factory.Trait(

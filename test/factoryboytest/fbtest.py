@@ -8,7 +8,7 @@ import factory
 from demo_factory_boy.fbfactory.userfc import UserFactory
 
 if __name__ == "__main__":
-    #单个生成
+    # 单个生成
     seq = []
     uf = UserFactory()
     print(uf.__dict__)
@@ -16,13 +16,13 @@ if __name__ == "__main__":
     seq.append(UserFactory().__dict__)
     print(seq)
 
-##批量生成
+    ##批量生成
     list = []
     fss = factory.build_batch(UserFactory, 4)
     for fs in fss:
         list.append(fs.__dict__)
     print(list)
-##部分字段修改
+    ##部分字段修改
     uff = UserFactory(shipped=True)
     print(uff.school.__dict__)
     print(uff.__dict__)

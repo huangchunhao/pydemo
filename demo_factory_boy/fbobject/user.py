@@ -5,7 +5,7 @@
 # @File    : user.py
 # @Software: PyCharm
 
-import factory
+
 
 
 class User():
