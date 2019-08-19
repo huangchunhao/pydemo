@@ -1,7 +1,7 @@
 pytest==5.0.1
 allure-pytest==2.7.1
 pytest-ordering==0.6
-ifacetools==0.0.9
+ifacetools==0.1.2
 requests==2.22.0
 redis==3.3.5
 Faker==2.0.0
