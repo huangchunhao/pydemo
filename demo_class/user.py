@@ -4,3 +4,10 @@
 # @Email   : Vincent@163.com
 # @File    : user.py
 # @Software: PyCharm
+class User():
+    name="hello"
+    age="18"
+
+    def info(self):
+        print("name:",self.name)
+        print("age:", self.age)
