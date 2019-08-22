@@ -7,12 +7,22 @@
 import pytest
 import uuid
 
+
 @pytest.fixture()
 def declass():
-    print("declass:"+str(uuid.uuid4()))
+    print("declass:" + str(uuid.uuid4()))
     return "declass"
+
 
 @pytest.fixture()
 def declass2():
-    print("declass2:"+str(uuid.uuid4()))
+    print("declass2:" + str(uuid.uuid4()))
     return "declass2"
+
+
+@pytest.fixture(scope="class")
+def class_auto():
+    print("")
+    print("class-begin")
+    yield
+    print("class-end")
