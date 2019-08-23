@@ -26,3 +26,10 @@ def class_auto():
     print("class-begin")
     yield
     print("class-end")
+
+
+@pytest.fixture(scope="function")
+def funcion_for_method():
+    print("method_begin")
+    yield
+    print("method_end")

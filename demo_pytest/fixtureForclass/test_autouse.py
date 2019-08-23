@@ -8,7 +8,7 @@
 import pytest
 
 
-@pytest.mark.usefixtures("class_auto")
+@pytest.mark.usefixtures("class_auto","funcion_for_method")
 class TestClass(object):
 
     @pytest.fixture(scope="function", autouse=True)
