@@ -48,6 +48,7 @@ if __name__ == "__main__":
     print(fake.address())
     print(fake.text())
     print(fake.ipv4_private())
+    print(fake.random_int(0,99999,1))
 
     my_word_list = [
         'danish', 'cheesecake', 'sugar',

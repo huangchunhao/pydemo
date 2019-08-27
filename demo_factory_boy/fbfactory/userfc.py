@@ -26,7 +26,8 @@ class UserFactory(factory.Factory):
 
     name = factory.Faker("name", locale="zh_CN")#factory.Faker
     num = factory.Faker("num")
-    age = factory.fuzzy.FuzzyInteger(42)#factory.fuzzy.FuzzyInteger
+    #age = factory.fuzzy.FuzzyInteger(42)#factory.fuzzy.FuzzyInteger
+    age = factory.Faker("random_int",min=18, max=30, step=1)
     city = factory.Faker("address", locale="zh_CN")
     phone = factory.fuzzy.FuzzyText("138", 7, "1", "1234567890")#factory.fuzzy.FuzzyText
     school = factory.SubFactory(SchoolFactory)#factory.SubFactory
