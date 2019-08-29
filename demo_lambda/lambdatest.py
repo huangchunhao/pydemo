@@ -13,3 +13,7 @@ print(a())
 b=lambda x:str(uuid.uuid4())+str(x)
 print(b("xxxxxxx"))
 
+c=lambda :(str(uuid.uuid4()),str(uuid.uuid4()))
+c1,c2=c()
+print(c1)
+print(c2)
