@@ -9,6 +9,6 @@
 
 
 class User():
-    def __init__(self, name, num, age, school, city, phone):
-        self.name, self.num, self.age, self.school, self.city, self.phone = \
-            name, num, age, school, city, phone
+    def __init__(self, name, num, age, school, city, phone, info, dictmap):
+        self.name, self.num, self.age, self.school, self.city, self.phone, self.info, self.dictmap= \
+            name, num, age, school, city, phone, info,dictmap

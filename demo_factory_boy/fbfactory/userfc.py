@@ -32,7 +32,11 @@ class UserFactory(factory.Factory):
     phone = factory.fuzzy.FuzzyText("138", 7, "1", "1234567890")#factory.fuzzy.FuzzyText
     school = factory.SubFactory(SchoolFactory)#factory.SubFactory
 
-    #factory.List(factory.SubFactory(BorrowerCreditFileFactory))
+    #info=factory.List([SchoolFactory])
+    info =factory.List(factory.build_batch(SchoolFactory, 4))
+    #dictmap=factory.Dict([("one",SchoolFactory),("two",SchoolFactory)])
+    dictmap = factory.Dict({"one":SchoolFactory, "two":SchoolFactory})
+    #dictmap = factory.Dict(dict(one=1, two=2))
 
     class Params:
         shipped = factory.Trait(

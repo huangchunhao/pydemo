@@ -5,7 +5,33 @@
 # @File    : fbtest.py
 # @Software: PyCharm
 import factory
+import pprint
 from demo_factory_boy.fbfactory.userfc import UserFactory
+
+
+
+# def todict(obj):
+#     data = {}
+#     for key, value in obj.__dict__.items():
+#         try:
+#             if isinstance(value, dict):
+#                 for k, v in value.items():
+#                     if isinstance(value, (str,int)):
+#                         data[k]=(value)
+#                     else:
+#                         data[key] = todict(value)
+#             elif isinstance(value, tuple):
+#                 for i in range(len(value)):
+#                     if isinstance(value[i], (str, int)):
+#
+#                     todict(value[i])
+#         except AttributeError:
+#             data[key] = value
+#     return data
+
+
+
+
 
 if __name__ == "__main__":
     # 单个生成
@@ -24,6 +50,12 @@ if __name__ == "__main__":
     print(list)
     ##部分字段修改
     uff = UserFactory(shipped=True)
+
     print(uff.school.__dict__)
     print(uff.__dict__)
     print(uff.__dir__())
+    print(print(uff.__dict__))
+    #print(pprint.pprint(uff.__dict__))
+#https://www.jb51.net/article/116869.htm
+#https://blog.csdn.net/tz_zs/article/details/100044487
+
