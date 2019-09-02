@@ -32,6 +32,8 @@ class UserFactory(factory.Factory):
     phone = factory.fuzzy.FuzzyText("138", 7, "1", "1234567890")#factory.fuzzy.FuzzyText
     school = factory.SubFactory(SchoolFactory)#factory.SubFactory
 
+    #factory.List(factory.SubFactory(BorrowerCreditFileFactory))
+
     class Params:
         shipped = factory.Trait(
             name=None
