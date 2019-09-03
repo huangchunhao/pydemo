@@ -8,16 +8,24 @@ import factory
 import factory.fuzzy
 from demo_factory_boy.fbobject.user import User
 from demo_factory_boy.fbobject.school import School
+from demo_factory_boy.fbobject.home import Home
 from demo_factory_boy.fbprivader.numpv import NumProvider
 
 factory.Faker.add_provider(NumProvider)  #添加自定义的NumProvider
 
+class HomeFactory(factory.Factory):
+    class Meta:
+        model = Home
+
+    address = factory.sequence(lambda n: 'address%04d' % n)#factory.sequence
+    name=["hhh",2]
 
 class SchoolFactory(factory.Factory):
     class Meta:
         model = School
 
     schoolName = factory.sequence(lambda n: 'school%04d' % n)#factory.sequence
+    home=factory.List(factory.build_batch(HomeFactory, 4))
 
 
 class UserFactory(factory.Factory):

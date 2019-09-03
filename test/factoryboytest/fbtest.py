@@ -29,6 +29,27 @@ from demo_factory_boy.fbfactory.userfc import UserFactory
 #             data[key] = value
 #     return data
 
+def objecttodict(obj):
+    dict_o=obj.__dict__
+    for key, value in dict_o.items():
+        print(key,type(value))
+        if isinstance(value, (str,int)):#不处理str,int的情况
+            pass
+        elif value is None:
+            pass
+        elif isinstance(value, list):#处理list的情况
+            valuelist=[]
+            for l in value:
+                if isinstance(l, (str,int)):
+                    valuelist.append(l)
+                else:
+                    valuelist.append(objecttodict(l))
+            dict_o[key] = valuelist
+        elif isinstance(value, dict):
+            pass#不处理dict的情况
+        else:#处理普通对象
+            dict_o[key]=objecttodict(value)
+    return dict_o
 
 
 
@@ -43,19 +64,23 @@ if __name__ == "__main__":
     print(seq)
 
     ##批量生成
-    list = []
+    listf = []
     fss = factory.build_batch(UserFactory, 4)
     for fs in fss:
-        list.append(fs.__dict__)
-    print(list)
+        listf.append(fs.__dict__)
+    print(listf)
     ##部分字段修改
     uff = UserFactory(shipped=True)
 
     print(uff.school.__dict__)
     print(uff.__dict__)
     print(uff.__dir__())
-    print(print(uff.__dict__))
     #print(pprint.pprint(uff.__dict__))
+
+
+    print(objecttodict(UserFactory(name='')))
+
+
 #https://www.jb51.net/article/116869.htm
 #https://blog.csdn.net/tz_zs/article/details/100044487
 

@@ -5,5 +5,5 @@
 # @File    : school.py
 # @Software: PyCharm
 class School:
-    def __init__(self,schoolName):
-        self.schoolName=schoolName
+    def __init__(self,schoolName,home):
+        self.schoolName,self.home=schoolName,home
