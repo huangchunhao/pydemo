@@ -70,7 +70,7 @@ def func2Yield():
 for i in func2Yield()():
     print(i)
 
-print("--"*20)
+print("--*"*20)
 
 
 #测试yield函数的执行顺序
@@ -90,7 +90,7 @@ def call(i):
 #print(yield_test(4))  # <generator object yield_test at 0x0000000001DE9200>
 
 
-for i in yield_test(3):
+for i in yield_test(1):
     print(str(sys._getframe().f_lineno) + " forb.")
     print('i=', i)  # 输出的是yield函数的返回值  yield函数，相当于一个return语句：下次迭代时候，代码从yield的下一个语句开始执行
     print(str(sys._getframe().f_lineno) + " fora.")
