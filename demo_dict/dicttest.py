@@ -5,7 +5,7 @@
 # @File    : dicttest.py
 # @Software: PyCharm
 
-dict={"code":123,"resp":"4565","data":{"id":5689},"list":[1,2,3,4,5],"listd":[{"id":5689},{"id":4545},{"id":5585}]}
+dict={"code":123,"resp":"4565","data":{"id":5689,"io":{"is":"4587"}},"list":[1,2,3,4,5],"listd":[{"id":5689},{"id":4545},{"id":5585}]}
 print(dict["code"])
 print(dict["resp"])
 print(dict["data"])
@@ -18,3 +18,20 @@ dict["code"]=5689
 print(dict)
 dict["code"]="8888"
 print(dict)
+
+
+def getValueInDict(dict, keylist):
+    value=dict[keylist[0]]
+    print(value)
+    keylist.remove(keylist[0])
+    print(keylist)
+    if keylist.__len__() >= 1 :
+        return getValueInDict(value, keylist)
+    else:
+        print(value)
+        return value
+
+
+
+s=getValueInDict(dict,['data','io','is'])
+print(s)
