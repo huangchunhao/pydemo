@@ -8,6 +8,13 @@
 
 import re
 
+#re.compile('rule').search(content).group()
+#re.compile('rule').findall(content)
+#re.match('www', 'www.runoob.com')  返回位置
+#re.match(r"(.*) are (.*?) .*", line, re.M | re.I)   通过group返回内容
+#re.search(r'(.*) are (.*?) .*', line2, re.M | re.I)
+
+
 # '.'     匹配所有字符串，除\n以外
 # '-'     表示范围[0-9]
 # '*'     匹配前面的子表达式零次或多次。要匹配 * 字符，请使用 \*。
