@@ -5,6 +5,7 @@
 # @File    : dicttest.py
 # @Software: PyCharm
 
+import json
 dict={"code":123,"resp":"4565","data":{"id":5689,"io":{"is":"4587"}},"list":[1,2,3,4,5],"listd":[{"id":5689},{"id":4545},{"id":5585}]}
 print(dict["code"])
 print(dict["resp"])
@@ -18,6 +19,7 @@ dict["code"]=5689
 print(dict)
 dict["code"]="8888"
 print(dict)
+print(str(dict))
 
 
 def getValueInDict(dict, keylist):
@@ -35,3 +37,11 @@ def getValueInDict(dict, keylist):
 
 s=getValueInDict(dict,['data','io','is'])
 print(s)
+
+
+targets=[1,2,3,4]
+dicts={"t":targets}
+print(str(dicts))
+print(type(str(dicts)))
+print(json.dumps(dicts))
+print(str(json.dumps(dicts)))
