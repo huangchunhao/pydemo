@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2019/11/23 0023 11:05
+# @Time    : 2019/11/24 0024 10:25
 # @Author  : Vincent
 # @Email   : Vincent@163.com
-# @File    : 策略模式.py
+# @File    : 工厂模式.py
 # @Software: PyCharm
-
-#https://www.cnblogs.com/ydf0509/p/8527515.html
 
 class People(object):
     def sayJob(self):
@@ -28,17 +26,20 @@ class Teacher(People):
 
 
 #具体策略类
-class Strategy(object):
-    def __init__(self,people):
-        self.people=people
+class Factory(object):
+    def __init__(self,jobmode):
+        self.jobmode=jobmode
 
-    def sayJob(self):
-        self.people.sayJob()
+    def getPeople(self):
+        if(self.jobmode==1):
+            return Student()
+        elif(self.jobmode==2):
+            return Teacher()
 
 
 
-f1=Strategy(Student())
-f2=Strategy(Teacher())
+f1=Factory(1).getPeople()
+f2=Factory(2).getPeople()
 
 f1.sayJob()
 f2.sayJob()
