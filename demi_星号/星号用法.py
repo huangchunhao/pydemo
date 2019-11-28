@@ -76,3 +76,20 @@ def tag(tag_name, **attributes):
 print(tag('a', href="http://treyhunner.com"))
 
 print(tag('img', height=20, width=40, src="face.jpg"))
+
+
+
+def tag2(tag_name, attributes):
+
+    attribute_list = [
+
+        f'{name}="{value}"'
+
+        for name, value in attributes.items()
+
+    ]
+
+    return f"<{tag_name} {' '.join(attribute_list)}>"
+
+
+print(tag2('img', {"height":"20", "width":"40", "src":"face.jpg"}))
